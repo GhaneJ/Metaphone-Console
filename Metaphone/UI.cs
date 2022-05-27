@@ -13,7 +13,7 @@ namespace Metaphone
             Console.SetCursorPosition(36, 2);
             Console.WriteLine("┌──────────────────────────┐");
             Console.SetCursorPosition(36, 3);
-            Console.WriteLine("│ Welcome to Metaphone v.1 │");
+            Console.WriteLine("│Welcome to Metaphone v.1.1│");
             Console.SetCursorPosition(36, 4);
             Console.WriteLine("│                          │");
             Console.SetCursorPosition(36, 5);

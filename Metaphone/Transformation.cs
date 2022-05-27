@@ -12,12 +12,11 @@ namespace Metaphone
         LetterExceptions exceptedletters = new LetterExceptions();
         Vowels vowels = new Vowels();
         Consonants consonants = new Consonants();
-        public string ConsonantTransformer(string word)
-        {  
-            
-            var dropSilent = exceptedletters.DropBeginningSilentLetters(word);
-            var consonantLetters = consonants.ConsonantTransformer(dropSilent);
-            var vowelDrop = vowels.VowelRemover(consonantLetters);
+        public string[] ConsonantTransformer(string[] word)
+        {
+            string[] dropSilent = exceptedletters.DropBeginningSilentLetters(word);
+            string[] consonantLetters = consonants.ConsonantTransformer(dropSilent);
+            string[] vowelDrop = vowels.VowelRemover(consonantLetters);
             //var duplicate = adjacent.DuplicateRemover(vowelDrop);
             return vowelDrop;
         }

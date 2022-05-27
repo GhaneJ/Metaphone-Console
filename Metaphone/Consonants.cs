@@ -8,126 +8,164 @@ namespace Metaphone
 {
     public class Consonants
     {
-        public string ConsonantTransformer(string word)
+        public string[] ConsonantTransformer(string[] word)
         {
-            while (!String.IsNullOrEmpty(word))
+            for (int i = 0; i < word.Length; i++)
             {
-
-                if (word.EndsWith('B') && word[word.IndexOf('B') - 1] == 'M')
-                {
-                    word = word.Remove(word.IndexOf('B'), 1);
-                }
-
-                if (word.Contains("CK"))
-                {
-                    word = word.Remove(word.IndexOf('C'), 1);
-                }
-
-                if (word.Contains("CIA"))
-                {
-                    word = word.Replace("CIA", "X");
-                }
-
-                if (word.Contains("CH"))
-                {
-                    word = word.Replace("CH", "X");
-                }
-
-                if (word.Contains("CI") || word.Contains("CE") || word.Contains("CY"))
-                {
-                    word = word.Replace('C', 'S');
-                }
-
-                else if (word.Contains('C'))
-                {
-                    word = word.Replace('C', 'K');
-                }
-
-                if (word.Contains("DGE") || word.Contains("DGI") || word.Contains("DGY"))
-                {
-                    word = word.Replace('D', 'J');
-                    word = word.Remove(word.IndexOf('G'), 1);
-                }
-
-                else if (word.Contains('D'))
-                {
-                    word = word.Replace('D', 'T');
-                }
-
-                if (word.Contains("GN") || word.Contains("GNED"))
-                {
-                    word = word.Remove(word.IndexOf('G'), 1);
-                }
-
-                if (word.Contains("GI") || word.Contains("GE") || word.Contains("GY"))
-                {
-                    word = word.Replace('G', 'J');
-                }
-
-                else if (word.Contains('G'))
-                {
-                    word = word.Replace('G', 'K');
-                }
-
-                if (word.Substring(word.Length - 2) == "GH")
+                while (!String.IsNullOrEmpty(word[i]))
                 {
 
+                    if (word[i].EndsWith('B') && word[i][word[i].IndexOf('B') - 1] == 'M')
+                    {
+                        word[i] = word[i].Remove(word[i].IndexOf('B'), 1);
+                    }
+
+                    if (word[i].Contains("CK"))
+                    {
+                        word[i] = word[i].Remove(word[i].IndexOf('C'), 1);
+                    }
+
+                    if (word.Contains("CIA"))
+                    {
+                        word[i] = word[i].Replace("C", "X");
+                    }
+
+                    if (word[i].Contains("CH"))
+                    {
+                        word[i] = word[i].Replace("CH", "X");
+                    }
+
+                    if (word[i].Contains("CI") || word.Contains("CE") || word.Contains("CY"))
+                    {
+                        word[i] = word[i].Replace('C', 'S');
+                    }
+
+                    else if (word[i].Contains('C'))
+                    {
+                        word[i] = word[i].Replace('C', 'K');
+                    }
+
+                    if (word[i].Contains("DGE") || word[i].Contains("DGI") || word[i].Contains("DGY"))
+                    {
+                        word[i] = word[i].Replace('D', 'J');
+                        word[i] = word[i].Remove(word[i].IndexOf('G'), 1);
+                    }
+
+                    else if (word[i].Contains('D'))
+                    {
+                        word[i] = word[i].Replace('D', 'T');
+                    }
+
+                    if (word[i].Contains("GN") || word[i].Contains("GNED"))
+                    {
+                        word[i] = word[i].Remove(word[i].IndexOf('G'), 1);
+                    }
+
+                    if (word[i].Contains("GI") || word[i].Contains("GE") || word[i].Contains("GY"))
+                    {
+                        word[i] = word[i].Replace('G', 'J');
+                    }
+
+                    else if (word[i].Contains('G'))
+                    {
+                        word[i] = word[i].Replace('G', 'K');
+                    }
+
+                    if (word[i].Substring(word[i].Length - 2) == "GH")
+                    {
+
+                    }
+
+                    else if (word[i].Contains("GH") || word[i].Contains("AH") || word[i].Contains("EH") || word[i].Contains("IH") || word[i].Contains("OH") || word[i].Contains("UH"))
+                    {
+                        word[i] = word[i].Remove(word[i].IndexOf('H'), 1);
+                    }
+
+                    if (word[i].Contains("PH"))
+                    {
+                        word[i] = word[i].Replace("PH", "F");
+                    }
+
+                    if (word[i].Contains("SIA"))
+                    {
+                        word[i].Replace("S", "X");
+                    }
+
+                    if (word[i].Contains("SIO"))
+                    {
+                        word[i].Replace("S", "X");
+                    }
+
+                    if (word[i].Contains("SH"))
+                    {
+                        word[i].Replace("S", "X");
+                    }
+
+                    if (word[i].Contains("TIA"))
+                    {
+                        word[i].Replace("T", "X");
+                    }
+
+                    if (word[i].Contains("TIO"))
+                    {
+                        word[i].Replace("T", "X");
+                    }
+
+                    if (word[i].Contains("TH"))
+                    {
+                        word[i].Replace("TH", "0");
+                    }
+
+                    if (word[i].Contains("TCH"))
+                    {
+                        word[i].Remove(word[i].IndexOf("T"), 1);
+                    }
+
+                    if (word[i].Contains('Q'))
+                    {
+                        word[i] = word[i].Replace("Q", "K");
+                    }
+
+                    if (word[i].Contains('V'))
+                    {
+                        word[i] = word[i].Replace("V", "F");
+                    }
+
+                    if (word[i].Contains("WA") || word[i].Contains("WE") || word[i].Contains("WI") || word[i].Contains("WO") || word[i].Contains("WU"))
+                    {
+
+                    }
+
+                    else if (word[i].Contains('W'))
+                    {
+                        word[i] = word[i].Remove(word[i].IndexOf("W"), 1);
+                    }
+
+                    if (word[i].Contains('X'))
+                    {
+                        word[i] = word[i].Replace("X", "KS");
+                    }
+
+                    if (word[i].Contains("YA") || word[i].Contains("YE") || word[i].Contains("YI") || word[i].Contains("YO") || word[i].Contains("YU"))
+                    {
+
+                    }
+
+                    else if (word[i].Contains('Y'))
+                    {
+                        word[i] = word[i].Remove(word[i].IndexOf("Y"), 1);
+                    }
+
+                    if (word[i].Contains('Z'))
+                    {
+                        word[i] = word[i].Replace("Z", "S");
+                    }
+
+                    return word;
                 }
-
-                else if (word.Contains("GH") || word.Contains("AH") || word.Contains("EH") || word.Contains("IH") || word.Contains("OH") || word.Contains("UH"))
-                {
-                    word = word.Remove(word.IndexOf('H'), 1);
-                }
-
-                if (word.Contains("PH"))
-                {
-                    word = word.Replace("PH", "F");
-                }
-
-                if (word.Contains('Q'))
-                {
-                    word = word.Replace("Q", "K");
-                }
-
-                if (word.Contains('V'))
-                {
-                    word = word.Replace("V", "F");
-                }
-
-                if (word.Contains("WA") || word.Contains("WE") || word.Contains("WI") || word.Contains("WO") || word.Contains("WU"))
-                {
-
-                }
-
-                else if (word.Contains('W'))
-                {
-                    word = word.Remove(word.IndexOf("W"), 1);
-                }
-
-                if (word.Contains('X'))
-                {
-                    word = word.Replace("X", "KS");
-                }
-
-                if (word.Contains("YA") || word.Contains("YE") || word.Contains("YI") || word.Contains("YO") || word.Contains("YU"))
-                {
-
-                }
-
-                else if (word.Contains('Y'))
-                {
-                    word = word.Remove(word.IndexOf("Y"), 1);
-                }
-
-                if (word.Contains('Z'))
-                {
-                    word = word.Replace("Z", "S");
-                }
-
-                return word;
             }
             return null;
         }
-            
+
     }
 }
