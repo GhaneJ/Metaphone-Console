@@ -6,14 +6,19 @@ Validation validation = new Validation();
 Transformation transform = new Transformation();
 Result result = new Result();
 
-string[] sentence = Array.Empty<string>();
+string[] input, sentence = Array.Empty<string>();
+string valid, transformed;
+
 ui.HUD_Directives();
 do
 {
-    string[] input = wordList.SentenceFeeder(sentence);
-    string[] valid = validation.ValidateEntry(input);
-    string[] transformed = transform.ConsonantTransformer(valid);
-    result.PrintResult(transformed);
+    input = wordList.SentenceFeeder(sentence);
+    for (int i = 0; i < input.Length; i++)
+    {
+        valid = validation.ValidateEntry(input[i]);
+        transformed = transform.Filters(valid);
+        result.PrintResult(transformed);
+    }
     
-    Console.WriteLine("\n");
+    ClearScreen.ClearCurrentConsoleLine();
 } while (true);

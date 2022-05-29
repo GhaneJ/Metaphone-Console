@@ -8,16 +8,16 @@ namespace Metaphone
 {
     public class Result
     {
-        UI ui = new UI();
-        public void PrintResult(string[] word)
+        public void PrintResult(string word)
         {
             foreach (var item in word)
             {
                 Console.Write($"{item} ");
             }
+            Console.Write("\nPress a key...");
             Console.ReadKey();
-            Console.Clear();
-            ui.HUD_Directives();
+            ClearScreen.ClearCurrentConsoleLine();
+
         }
     }
 }

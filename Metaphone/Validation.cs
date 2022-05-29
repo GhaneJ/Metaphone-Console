@@ -9,15 +9,14 @@ namespace Metaphone
 {
     public class Validation
     {
-        public string[] ValidateEntry(string[] word)
+        public string ValidateEntry(string word)
         {
             string allowedChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-            while (word.All(allowedChar.Contains))
+            while (!word.All(allowedChar.Contains) || String.IsNullOrEmpty(word))
             {
                 Console.WriteLine("\nOnly (a to z) English letters are accepted: \n");
-                Console.Write("\nTry a new word: ");
-                word = Console.ReadLine().ToUpper().Split();
+                word = Console.ReadLine().ToUpper();
             }
             return word;
         }
