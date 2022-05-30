@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metaphone
+namespace Metaphone.Menu
 {
-    public class UI
+    public class Menu
     {
         public void HUD_Directives()
         {

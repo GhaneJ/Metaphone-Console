@@ -1,6 +1,10 @@
 ﻿using Metaphone;
+using Metaphone.Data_Validation;
+using Metaphone.Menu;
+using Metaphone.Results;
+using Metaphone.Transform_Rules;
 
-UI ui = new UI();
+Menu win = new Menu();
 UserInput wordList = new UserInput();
 Validation validation = new Validation();
 Transformation transform = new Transformation();
@@ -9,7 +13,7 @@ Result result = new Result();
 string[] input, sentence = Array.Empty<string>();
 string valid, transformed;
 
-ui.HUD_Directives();
+win.HUD_Directives();
 do
 {
     input = wordList.SentenceFeeder(sentence);

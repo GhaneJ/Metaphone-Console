@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metaphone
+namespace Metaphone.Transform_Rules
 {
     public class Transformation
     {

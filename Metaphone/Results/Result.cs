@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Metaphone.Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metaphone
+namespace Metaphone.Results
 {
     public class Result
     {
