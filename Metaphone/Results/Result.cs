@@ -1,24 +1,18 @@
-﻿using Metaphone.Menu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Metaphone.Results;
 
-namespace Metaphone.Results
+using Metaphone.Menu;
+
+public class Result
 {
-    public class Result
+    public void PrintResult(string word)
     {
-        public void PrintResult(string word)
+        foreach (var item in word)
         {
-            foreach (var item in word)
-            {
-                Console.Write($"{item} ");
-            }
-            Console.Write("\nPress a key...");
-            Console.ReadKey();
-            ClearScreen.ClearCurrentConsoleLine();
-
+            Console.Write($"{item} ");
         }
+        Console.Write("\nPress a key...");
+        Console.ReadKey();
+        ClearScreen.ClearCurrentConsoleLine();
+
     }
 }
