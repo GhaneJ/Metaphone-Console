@@ -3,25 +3,21 @@ using Metaphone.Menu;
 using Metaphone.Results;
 using Metaphone.Transform_Rules;
 
-Menu win = new Menu();
-UserInput wordList = new UserInput();
-Validation validation = new Validation();
-Transformation transform = new Transformation();
-Result result = new Result();
+Transformation transform = new();
 
-string[] input, sentence = Array.Empty<string>();
+string[] input, sentence = [];
 string valid, transformed;
 
-win.HUD_Directives();
+Menu.HUD_Directives();
 do
 {
-    input = wordList.SentenceFeeder(sentence);
+    input = UserInput.SentenceFeeder(sentence);
     for (int i = 0; i < input.Length; i++)
     {
-        valid = validation.ValidateEntry(input[i]);
+        valid = Validation.ValidateEntry(input[i]);
         transformed = transform.Filters(valid);
-        result.PrintResult(transformed);
+        Result.PrintResult(transformed);
     }
-    
+
     ClearScreen.ClearCurrentConsoleLine();
 } while (true);

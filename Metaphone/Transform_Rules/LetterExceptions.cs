@@ -2,7 +2,7 @@
 
 public class LetterExceptions
 {
-    public string DropBeginningSilentLetters(string word)
+    public static string DropBeginningSilentLetters(string word)
     {
         // Since "ac" starts with 'a' and 'a' is a vowel and removing
         // a vowel from the beginning violates our rules, so it will be
@@ -10,7 +10,7 @@ public class LetterExceptions
 
         if (word.StartsWith("KN") || word.StartsWith("GN") || word.StartsWith("PN") || word.StartsWith("WR"))
         {
-            int drop = word.IndexOf(word.Substring(0, 1));
+            int drop = word.IndexOf(word[..1]);
             word = word.Remove(drop, 1);
 
         }

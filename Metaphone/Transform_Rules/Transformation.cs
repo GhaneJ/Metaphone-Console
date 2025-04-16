@@ -2,18 +2,15 @@
 
 public class Transformation
 {
-    DuplicatedConsonants adjacent = new DuplicatedConsonants();
-    LetterExceptions exceptedletters = new LetterExceptions();
-    Vowels vowels = new Vowels();
-    Consonants consonants = new Consonants();
+    // DuplicatedConsonants adjacent = new DuplicatedConsonants();
     string dropSilent;
     string consonantLetters;
     string vowelDrop;
     public string Filters(string word)
     {
-        dropSilent = exceptedletters.DropBeginningSilentLetters(word);
-        consonantLetters = consonants.ConsonantTransformer(dropSilent);
-        vowelDrop = vowels.VowelRemover(consonantLetters);
+        dropSilent = LetterExceptions.DropBeginningSilentLetters(word);
+        consonantLetters = Consonants.Transform(dropSilent);
+        vowelDrop = Vowels.VowelRemover(consonantLetters);
         //var duplicate = adjacent.DuplicateRemover(vowelDrop);
 
         return vowelDrop;

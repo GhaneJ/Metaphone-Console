@@ -2,7 +2,7 @@
 
 public class Validation
 {
-    public string ValidateEntry(string word)
+    public static string ValidateEntry(string word)
     {
         string allowedChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

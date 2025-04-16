@@ -4,7 +4,7 @@ using Metaphone.Menu;
 
 public class Result
 {
-    public void PrintResult(string word)
+    public static void PrintResult(string word)
     {
         foreach (var item in word)
         {

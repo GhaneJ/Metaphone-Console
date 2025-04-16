@@ -2,7 +2,7 @@
 
 public class DuplicatedConsonants
 {
-    public string DuplicateRemover(string word)
+    public static string DuplicateRemover(string word)
     {
         //for (int i = 0; i < word.Length - 1; i++)
         //{

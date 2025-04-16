@@ -2,7 +2,7 @@
 
 public class Menu
 {
-    public void HUD_Directives()
+    public static void HUD_Directives()
     {
         Console.SetCursorPosition(36, 2);
         Console.WriteLine("┌──────────────────────────┐");
